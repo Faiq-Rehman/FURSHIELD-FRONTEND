@@ -1,0 +1,2 @@
+import { Search } from 'lucide-react';
+export default function SearchBar({ value, onChange, placeholder = 'Search FurShield' }) { return <label className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-slate-500 focus-within:border-emerald-500"><Search size={18}/><input className="w-full bg-transparent text-sm outline-none placeholder:text-slate-400" value={value} onChange={(e) => onChange(e.target.value)} placeholder={placeholder}/></label>; }
