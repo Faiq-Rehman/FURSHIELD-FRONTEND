@@ -11,14 +11,16 @@ import {
   ExternalLink,
   ChevronRight,
   Menu,
-  X
+  X,
+  Store
 } from 'lucide-react';
 
 const adminLinks = [
   [LayoutDashboard, 'System Overview', '/admin'],
   [Users, 'User Moderation', '/admin/users'],
+  [Store, 'Shelter Management', '/admin/shelters'],
   [PawPrint, 'Pets & Adoptions', '/admin/pets'],
-  [Package, 'Products & Orders', '/admin/products'],
+  [Package, 'Product Management', '/admin/products'],
   [ClipboardList, 'Appointments', '/admin/appointments'],
 ];
 

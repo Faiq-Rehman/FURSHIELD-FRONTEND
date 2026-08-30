@@ -17,7 +17,8 @@ export default function AdminRoute() {
     );
   }
 
-  const isAdminAuthenticated = Boolean(adminToken) || user?.role === 'admin' || Boolean(storedAdminUser);
+  const userToken = localStorage.getItem('furshield-token');
+  const isAdminAuthenticated = Boolean(adminToken) || (Boolean(userToken) && user?.role === 'admin');
 
   return isAdminAuthenticated ? <Outlet /> : <Navigate to="/admin/login" replace />;
 }

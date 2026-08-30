@@ -15,9 +15,14 @@ const api = axios.create({
 api.interceptors.request.use((config) => {
   const adminToken = localStorage.getItem('furshield-admin-token');
   const userToken = localStorage.getItem('furshield-token');
-  
-  if (config.url?.startsWith('/admin') && adminToken) {
-    config.headers.Authorization = `Bearer ${adminToken}`;
+  const isAdminLocation = typeof window !== 'undefined' && window.location.pathname.startsWith('/admin');
+
+  if (config.url?.startsWith('/admin') || isAdminLocation) {
+    if (adminToken) {
+      config.headers.Authorization = `Bearer ${adminToken}`;
+    } else if (userToken) {
+      config.headers.Authorization = `Bearer ${userToken}`;
+    }
   } else if (userToken) {
     config.headers.Authorization = `Bearer ${userToken}`;
   } else if (adminToken) {

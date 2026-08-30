@@ -60,6 +60,8 @@ import ShelterProfile from '../Pages/Shelter/Profile';
 
 // Admin Pages
 import AdminDashboard from '../Pages/Admin/AdminDashboard';
+import AdminProducts from '../Pages/Admin/AdminProducts';
+import AdminShelters from '../Pages/Admin/AdminShelters';
 
 export default function AppRoutes() {
   return (
@@ -136,6 +138,8 @@ export default function AppRoutes() {
       <Route element={<AdminRoute />}>
         <Route element={<AdminLayout />}>
           <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/admin/products" element={<AdminProducts />} />
+          <Route path="/admin/shelters" element={<AdminShelters />} />
           <Route path="/admin/*" element={<AdminDashboard />} />
         </Route>
       </Route>
